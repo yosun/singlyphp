@@ -2,9 +2,9 @@
 
 // test @ http://AReality3d.com/ext/singly/
 
-define('CLIENT_ID','[your client_id]');
-define('CLIENT_SECRET','[your client_secret]');
-define('REDIRECT_URI','[your redirect_uri]');
+define('CLIENT_ID','[INSERT client_id]');
+define('CLIENT_SECRET','[INSERT client_secret]');
+define('REDIRECT_URI','[INSERT redirect_uri]');
 
 if(strlen($_REQUEST['code'])>2){
 
@@ -15,10 +15,11 @@ if(strlen($_REQUEST['code'])>2){
 	$url='https://api.singly.com/oauth/access_token';
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_POST,true);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, urlencode($blurb));
-    $return = curl_exec($ch);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $blurb);
+	$return = curl_exec($ch);
 	
 	// [do whatever you want with the return token <<<<<<<<<<<<<<<<<<<<<<<<<<]
+	$arr = json_decode($return);
 	print_r($return);
 
 }else if(strlen($_REQUEST['service'])>2){
