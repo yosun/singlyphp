@@ -1,6 +1,6 @@
 <?php
 
-// test @ http://AReality3d.com/ext/singly/
+// test @ http://AReality3d.com/ext/singly-test/
 
 define('CLIENT_ID','[INSERT client_id]');
 define('CLIENT_SECRET','[INSERT client_secret]');
