@@ -1,5 +1,7 @@
 <?php
 
+// test @ http://AReality3d.com/ext/singly/
+
 define('CLIENT_ID','[your client_id]');
 define('CLIENT_SECRET','[your client_secret]');
 define('REDIRECT_URI','[your redirect_uri]');
