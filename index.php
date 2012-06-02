@@ -12,19 +12,18 @@ if(strlen($_REQUEST['code'])>2){
 	$blurb='client_id='.CLIENT_ID.'&client_secret='.CLIENT_SECRET.'&code='.$_REQUEST['code'];
 	$url='https://api.singly.com/oauth/access_token';
 	$ch = curl_init($url);
-	//curl_setopt($ch, CURLOPT_HTTPHEADER,     $header);
-    curl_setopt($ch, CURLOPT_POST,true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, urlencode($blurb));
+	curl_setopt($ch, CURLOPT_POST,true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, urlencode($blurb));
     $return = curl_exec($ch);
 	
-	// [do whatever you want with the return token]
+	// [do whatever you want with the return token <<<<<<<<<<<<<<<<<<<<<<<<<<]
 	print_r($return);
 
 }else if(strlen($_REQUEST['service'])>2){
 
 	// we got a 2bit string describing what kind of service we want to auth, so redirect the auth...
 	$url = 'https://api.singly.com/oauth/authorize?client_id='.CLIENT_ID.'&redirect_uri='.REDIRECT_URI.'&service='.$_REQUEST['service'];
-	//header('Location: '.$url);
+	header('Location: '.$url);
 	echo '<a href="'.$url.'">You should be redirected here.</a>';
 
 }else{
