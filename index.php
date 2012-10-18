@@ -15,6 +15,7 @@ if(strlen($_REQUEST['code'])>2){
 	$url='https://api.singly.com/oauth/access_token';
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_POST,true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $blurb);
 	$return = curl_exec($ch);
 	
